@@ -2,6 +2,11 @@
   "name": "trading-capital",
   "private": true,
   "version": "0.0.0",
+  "author": {
+    "email": "phoobynet@users.noreply.github.com",
+    "name": "Glenn B",
+    "url": ""
+  },
   "main": "build/main/main.js",
   "scripts": {
     "dev": "npm run main:build-ts && concurrently \"npm run renderer:dev\" \"npm run main:watch\" \"npm run main:nodemon\"",
