@@ -1,0 +1,14 @@
+{
+  "extends": "@tsconfig/node16",
+  "compilerOptions": {
+    "outDir": "../build/main",
+    "rootDir": ".",
+    "target": "ESNext",
+    "allowJs": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.js"
+  ]
+}
