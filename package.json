@@ -1,7 +1,7 @@
 {
   "name": "trading-capital",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0",
   "author": {
     "email": "phoobynet@users.noreply.github.com",
     "name": "Glenn B",
@@ -10,6 +10,7 @@
   "main": "build/main/main.js",
   "scripts": {
     "dev": "npm run main:build-ts && concurrently \"npm run renderer:dev\" \"npm run main:watch\" \"npm run main:nodemon\"",
+    "build": "npm run renderer:build && npm run main:build-ts && electron-forge make",
     "renderer:dev": "vite",
     "renderer:build": "vue-tsc -p ./renderer/tsconfig.json --noEmit && vite build",
     "renderer:serve": "vite preview",
@@ -18,7 +19,6 @@
     "main:build-ts": "tsc --project main/tsconfig.json",
     "main:start": "electron-forge start",
     "main:package": "electron-forge package",
-    "main:make": "npm run renderer:build && npm run main:build-ts && electron-forge make",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"

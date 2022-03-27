@@ -13,20 +13,20 @@ async function createWindow(): Promise<void> {
     const primaryDisplay = screen.getPrimaryDisplay()
 
     win = new BrowserWindow({
-      width: 300,
-      height: 220,
+      width: 300 * 2,
+      height: 220 * 2,
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
       },
       y: 23,
       x: primaryDisplay.workAreaSize.width / 2,
-      resizable: false,
+      resizable: true,
     })
     await win.loadURL('http://localhost:3000')
-    // win.webContents.openDevTools({
-    //   mode: 'bottom',
-    // })
+    win.webContents.openDevTools({
+      mode: 'bottom',
+    })
   } else {
     win = new BrowserWindow({
       width: 300,
@@ -35,6 +35,7 @@ async function createWindow(): Promise<void> {
         nodeIntegration: true,
         contextIsolation: false,
       },
+      resizable: false,
     })
     await win.loadURL(`file://${path.join(__dirname, '../dist/index.html')}`)
   }

@@ -11,7 +11,8 @@
           type="text"
           v-model="capital"
           class="input input-bordered text-right w-full"
-          @focus="(e) => e.target.select()"
+          v-numeric
+          v-focus-on-select
         />
       </div>
       <div class="w-1/2">
@@ -37,7 +38,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import numeral from 'numeral'
 import { range } from 'lodash'
 import { useStorage } from '@vueuse/core'
